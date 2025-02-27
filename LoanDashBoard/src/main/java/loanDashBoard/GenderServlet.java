@@ -23,6 +23,7 @@ public class GenderServlet extends HttpServlet {
         session.setAttribute("gender", gender);
         session.setAttribute("maritalStatus", maritalStatus);
 System.out.println("hi");
+System.out.println("hrhh");
         RequestDispatcher rd = req.getRequestDispatcher("maritalstatus.html");
         rd.forward(req, resp);
     }
