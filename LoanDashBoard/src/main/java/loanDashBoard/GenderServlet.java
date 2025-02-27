@@ -20,7 +20,7 @@ public class GenderServlet extends HttpServlet {
         String maritalStatus = req.getParameter("maritalStatus");
 
         HttpSession session = req.getSession();
-        System.out.println("hi");
+        System.out.println("hghiiiiii");
         session.setAttribute("gender", gender);
         session.setAttribute("maritalStatus", maritalStatus);
         RequestDispatcher rd = req.getRequestDispatcher("maritalstatus.html");
