@@ -20,10 +20,9 @@ public class GenderServlet extends HttpServlet {
         String maritalStatus = req.getParameter("maritalStatus");
 
         HttpSession session = req.getSession();
+        System.out.println("hi");
         session.setAttribute("gender", gender);
         session.setAttribute("maritalStatus", maritalStatus);
-System.out.println("hi");
-System.out.println("hrhh");
         RequestDispatcher rd = req.getRequestDispatcher("maritalstatus.html");
         rd.forward(req, resp);
     }
