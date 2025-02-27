@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Qualification</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+           .back-btn {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        }
+       .back-btn:hover {
+        color: darkgray;
+        }
+        .form-container {
+            text-align:left;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            width: 350px;
+        }
+        h1 {
+            text-align:center;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align:center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .qualification-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+     <a href="email.html" class="back-btn">← Back</a>
+        <form action="EduQualification" method="POST">
+            <h1>Educational Qualification</h1>
+            <p>Select your highest level of qualification</p>
+
+            <div class="qualification-container">
+                <label><input type="radio" name="qualification" value="Undergraduate" onclick="disableSelection(this)"> Undergraduate</label>
+                <label><input type="radio" name="qualification" value="Graduate" onclick="disableSelection(this)"> Graduate</label>
+                <label><input type="radio" name="qualification" value="Post Graduate" onclick="disableSelection(this)"> Post Graduate</label>
+                <label><input type="radio" name="qualification" value="Other" onclick="disableSelection(this)"> Other</label>
+            </div>
+
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+
+</body>
+</html>

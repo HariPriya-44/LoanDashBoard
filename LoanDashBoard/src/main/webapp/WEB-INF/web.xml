@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>LoanDashBoard</display-name>
+  <servlet>
+  <servlet-name>mobilenum</servlet-name>
+  <servlet-class>loanDashBoard.MobileNumberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>mobilenum</servlet-name>
+  <url-pattern>/Mobile</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>personaldetails</servlet-name>
+  <servlet-class>loanDashBoard.PersonalDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>personaldetails</servlet-name>
+    <url-pattern>/pd</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>gender</servlet-name>
+  <servlet-class>loanDashBoard.GenderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>gender</servlet-name>
+    <url-pattern>/gen</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  <servlet-name>marriage</servlet-name>
+  <servlet-class>loanDashBoard.MaritalStatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>marriage</servlet-name>
+    <url-pattern>/marriage</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  <servlet-name>address</servlet-name>
+  <servlet-class>loanDashBoard.AddressServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>address</servlet-name>
+    <url-pattern>/Address</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>update</servlet-name>
+  <servlet-class>loanDashBoard.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+   <servlet-name>Email</servlet-name>
+  <servlet-class>employeeDetails.EmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Email</servlet-name>
+    <url-pattern>/email</url-pattern>
+  </servlet-mapping>
+  
+  
+<servlet>
+    <servlet-name>EduQServlet</servlet-name>
+    <servlet-class>employeeDetails.EducationQualificationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>EduQServlet</servlet-name>
+    <url-pattern>/EduQualification</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>EmpTypServlet</servlet-name>
+    <servlet-class>employeeDetails.EmploymentTypeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>EmpTypServlet</servlet-name>
+    <url-pattern>/EmpTyp</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>MonthlyIncomeServlet</servlet-name>
+    <servlet-class>employeeDetails.MonthlyIncomeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>MonthlyIncomeServlet</servlet-name>
+    <url-pattern>/MonthlyIncome</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>AddressServlet</servlet-name>
+    <servlet-class>employeeDetails.OfficeAddressServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AddressServlet</servlet-name>
+    <url-pattern>/officeAddress</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>CDetailsServlet</servlet-name>
+    <servlet-class>employeeDetails.CompanyDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>CDetailsServlet</servlet-name>
+    <url-pattern>/CDetails</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>employeedetails</servlet-name>
+    <servlet-class>employeeDetails.EmployeeTableServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>employeedetails</servlet-name>
+    <url-pattern>/employeeDetails</url-pattern>
+</servlet-mapping>
+
+
+
+  
+   <servlet>
+        <servlet-name>bankaccdetails</servlet-name>
+        <servlet-class>bankdetails.BankAccountDetailsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bankaccdetails</servlet-name>
+        <url-pattern>/BankVerification</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>bankstatements</servlet-name>
+        <servlet-class>bankdetails.BankstatementsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bankstatements</servlet-name>
+        <url-pattern>/BankstatementsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>bankdetails</servlet-name>
+        <servlet-class>bankdetails.BankDetailsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>bankdetails</servlet-name>
+        <url-pattern>/bank</url-pattern>
+    </servlet-mapping>
+  
+  
+  
+  <servlet>
+    <servlet-name>PurposeOfLoanServlet</servlet-name>
+    <servlet-class>loanDetails.PurposeOfLoanServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>PurposeOfLoanServlet</servlet-name>
+    <url-pattern>/PurposeOfLoan</url-pattern>
+</servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoanAmountServlet</servlet-name>
+    <servlet-class>loanDetails.LoanAmountServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LoanAmountServlet</servlet-name>
+    <url-pattern>/LoanAmount</url-pattern>
+</servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SelfieServlet</servlet-name>
+    <servlet-class>loanDetails.SelfieServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SelfieServlet</servlet-name>
+    <url-pattern>/SelfieServlet</url-pattern>
+</servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>Addressverification</servlet-name>
+    <servlet-class>loanDetails.AddressVerificationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>Addressverification</servlet-name>
+    <url-pattern>/AddressVerification</url-pattern>
+</servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>panverification</servlet-name>
+    <servlet-class>loanDetails.PanCardVerificationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>panverification</servlet-name>
+    <url-pattern>/PanCardVerification</url-pattern>
+</servlet-mapping>
+  
+   <servlet>
+    <servlet-name>aadaharcard</servlet-name>
+    <servlet-class>loanDetails.AadhaarValidationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>aadaharcard</servlet-name>
+    <url-pattern>/aadaharcard</url-pattern>
+</servlet-mapping>
+  
+ 
+  <servlet>
+    <servlet-name>payslips</servlet-name>
+    <servlet-class>loanDetails.PayslipsUploadServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>payslips</servlet-name>
+    <url-pattern>/payslips</url-pattern>
+</servlet-mapping>
+  
+   <servlet>
+    <servlet-name>loanDetails</servlet-name>
+    <servlet-class> loanDetails.LoanDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>loanDetails</servlet-name>
+    <url-pattern>/loanDetails</url-pattern>
+</servlet-mapping>
+
+
+   <servlet>
+    <servlet-name>combine</servlet-name>
+    <servlet-class>combineTable.CombinedDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+     <servlet-name>combine</servlet-name>
+    <url-pattern>/combine</url-pattern>
+</servlet-mapping> 
+  </web-app>

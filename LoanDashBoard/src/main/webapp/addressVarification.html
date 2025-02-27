@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Address Verification</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    .form-container {
+        text-align: left;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        width: 350px;
+    }
+    .back-btn {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .back-btn:hover {
+        color: darkgray;
+    }
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    label {
+        display: block;
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    input, select {
+        padding: 10px;
+        font-size: 14px;
+        width: 90%;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: darkblue;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <form action="AddressVerification" method="post" enctype="multipart/form-data">
+        <a href="selfiee.html" class="back-btn">← Back</a>
+        <h1>Address Verification</h1>
+        <p>Please Upload your address verification document.</p>
+
+        <label for="AddressVerification">Document Type<span class="required" style="color: red;">*</span></label>
+        <select id="AddressVerification" name="AddressVerification" onchange="showUploadFields()">
+            <option value="Select">Select an option</option>
+            <option value="Aadhaar">Aadhaar</option>
+            <option value="Rent Agreement">Rent Agreement</option>
+            <option value="Water Bill">Water Bill</option>
+            <option value="Electricity Bill">Electricity Bill</option>
+        </select>
+
+        <div id="aadhaarUploads" class="hidden">
+            <label for="aadhaarFront">Upload Aadhaar Front Side<span class="required" style="color: red;">*</span></label>
+            <input type="file" id="aadhaarFront" name="aadhaarFront" accept="image/*">
+
+            <label for="aadhaarBack">Upload Aadhaar Back Side</label>
+            <input type="file" id="aadhaarBack" name="aadhaarBack" accept="image/*">
+        </div>
+
+        <div id="singleUpload" class="hidden">
+            <label for="documentUpload">Upload Document<span class="required" style="color: red;">*</span></label>
+            <input type="file" id="documentUpload" name="documentUpload" accept="image/*,application/pdf">
+        </div>
+
+        <button type="submit">Continue</button>
+    </form>
+</div>
+
+<script>
+    function showUploadFields() {
+        const selectedValue = document.getElementById("AddressVerification").value;
+        const aadhaarUploads = document.getElementById("aadhaarUploads");
+        const singleUpload = document.getElementById("singleUpload");
+
+        aadhaarUploads.classList.add("hidden");
+        singleUpload.classList.add("hidden");
+
+        if (selectedValue === "Aadhaar") {
+            aadhaarUploads.classList.remove("hidden"); 
+        } else if (selectedValue === "Rent Agreement" || selectedValue === "Water Bill" || selectedValue === "Electricity Bill") {
+            singleUpload.classList.remove("hidden"); 
+        }
+    }
+</script>
+
+</body>
+</html>

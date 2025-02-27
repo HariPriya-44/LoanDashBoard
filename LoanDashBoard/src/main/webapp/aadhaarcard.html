@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Number Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            min-width: 20vw;
+            min-height: 50vh;
+            display: inline-block;
+        }
+        .back-btn {
+            text-decoration: none;
+            font-size: 15px;
+            color: black;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .back-btn:hover {
+            color: darkgray;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form onsubmit="return validateAadhaar()" action="aadaharcard" method="post">
+         <a href="panCardVerification.html" class="back-btn">← Back</a> 
+         <h1>Aadhaar Number Validation</h1>
+         <input type="text" id="aadhaarNumber" name="aadhaarNumber" placeholder="XXXX-XXXX-XXXX" maxlength="14" oninput="formatAadhaar()" required>
+         
+         <div id="aadhaarError" class="error">Invalid Aadhaar number</div>
+         <br>
+         <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function formatAadhaar() {
+        let aadhaarInput = document.getElementById("aadhaarNumber");
+        let value = aadhaarInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+        
+        // Auto-insert hyphens after every 4 digits
+        if (value.length > 4) value = value.substring(0, 4) + '-' + value.substring(4);
+        if (value.length > 9) value = value.substring(0, 9) + '-' + value.substring(9);
+        if (value.length > 14) value = value.substring(0, 14); // Limit to 14 chars
+
+        aadhaarInput.value = value;
+    }
+
+    function validateAadhaar() {
+        let aadhaarInput = document.getElementById("aadhaarNumber").value;
+        let aadhaarError = document.getElementById("aadhaarError");
+
+        // Aadhaar format should be XXXX-XXXX-XXXX
+        let aadhaarPattern = /^[2-9]{1}[0-9]{3}-[0-9]{4}-[0-9]{4}$/;
+
+        if (!aadhaarPattern.test(aadhaarInput)) {
+            aadhaarError.style.display = "block";
+            return false;
+        } else {
+            aadhaarError.style.display = "none";
+            return true;
+        }
+    }
+</script>
+
+</body>
+</html>

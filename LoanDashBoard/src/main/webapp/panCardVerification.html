@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PAN Card Verification</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    .form-container {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        width: 350px;
+    }
+    .back-btn {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        display: inline-block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .back-btn:hover {
+        color: darkgray;
+    }
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background-color: darkblue;
+    }
+    .hidden {
+        display: none;
+    }
+    .preview-container {
+        margin-top: 10px;
+    }
+    #previewImage {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <form action="PanCardVerification" method="post" enctype="multipart/form-data">
+        <a href="selfiee.html" class="back-btn">← Back</a>
+        <h1>PAN Card Verification</h1>
+        <p>Please upload your PAN card.</p>
+
+        <!-- File Upload Input -->
+        <input type="file" id="PanFront" name="PanFront" accept="image/*" onchange="previewFile()">
+
+        <!-- Preview Image -->
+        <div class="preview-container">
+            <img id="previewImage">
+        </div>
+
+        <button type="submit">Continue</button>
+    </form>
+</div>
+
+<script>
+    function previewFile() {
+        const file = document.getElementById("PanFront").files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("previewImage").src = e.target.result;
+                document.getElementById("previewImage").style.display = "block";
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
+</body>
+</html>

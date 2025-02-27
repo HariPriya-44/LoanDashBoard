@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpose of Loan</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            width: 400px;
+            text-align: center;
+        }
+        .back-btn {
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .back-btn:hover {
+            color: darkgray;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .loan-btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .loan-btns button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background-color: Blue;
+            color: white;
+            cursor: pointer;
+        }
+        .loan-btns button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Purpose of Loan</h1>
+        <p>Please select the purpose of the loan.</p>
+        <form action="PurposeOfLoan" method="post" id="loanForm">
+            <div class="loan-btns">
+                <button type="submit" name="loan" value="HomeBuilding">Home Building</button>
+                <button type="submit" name="loan" value="HomeRenovation">Home Renovation</button>
+                <button type="submit" name="loan" value="Travel">Travel</button>
+                <button type="submit" name="loan" value="Education">Education</button>
+                <button type="submit" name="loan" value="OccasionInFamily">Occasion in Family</button>
+                <button type="submit" name="loan" value="PurchaseHousehold">Purchase of Household</button>
+                <button type="submit" name="loan" value="BusinessUse">Business Use</button>
+                <button type="submit" name="loan" value="OfficeRenovation">Office Renovation</button>
+                <button type="submit" name="loan" value="WorkingCapital">Working Capital</button>
+                <button type="submit" name="loan" value="Marriage">Marriage</button>
+                <button type="submit" name="loan" value="PersonalCrisis">Personal Crisis</button>
+                <button type="submit" name="loan" value="Others">Others</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
